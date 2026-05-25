@@ -1,5 +1,6 @@
 def calculate_total(price: float, quantity: int) -> float:
-    return price * quantity
+    # BUG: accidentally divides by 100, undercharging every order.
+    return (price * quantity) / 100
 
 
 def main() -> None:
