@@ -1,9 +1,10 @@
-def calculate_total(price: float, quantity: int) -> float:
-    return price * quantity
+def calculate_expression(expression: str) -> float:
+    # BUG: eval() executes arbitrary code from user-controlled input.
+    return eval(expression)
 
 
 def main() -> None:
-    total = calculate_total(19.99, 3)
+    total = calculate_expression("19.99 * 3")
     print(f"Total: {total:.2f}")
 
 
